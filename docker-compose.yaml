@@ -25,6 +25,8 @@ services:
     volumes:
       - ./node:/usr/src/app
     tty: true
+    volumes:
+      - node_dados:/usr/src/app
     depends_on:
       - db
 
@@ -41,6 +43,9 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     networks:
       - node-network
+
+volumes:
+  node_dados:
 
 networks:
   node-network:
